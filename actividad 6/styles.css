@@ -14,6 +14,10 @@ body{
     width: 80%;
     margin: 0 auto;
     border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+
 }
 
 .header{
@@ -27,13 +31,15 @@ body{
     border-color: black;*/
 
     background-color: red;
-    height:80px;
-    width: calc(100%-20px);
+    /*height:80px;*/
+    /*width: calc(100%-20px);*/
     text-align: center;
     line-height: 80px;
     color: white;
     padding: 0 10px;
     border-bottom: 3px dashed black;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .nav{
@@ -43,6 +49,9 @@ body{
     background-color: lightblue;
     overflow: hidden;
     border-bottom: 1px solid black;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
     
 }
 
@@ -50,7 +59,7 @@ body{
     float: left;
     list-style: none;
     margin:10px;
-    line-height: 30px;
+    /*line-height: 30px;*/
 }
 
 /*ul{
@@ -95,25 +104,29 @@ li a:hover {
     padding-top: 10px;*/
     
     float: left;
-    width: calc(70% - 40px);
+    /*width: calc(70% - 40px);*/
     background-color: green;
-    min-height: 500px;
+    /*min-height: 500px;*/
     padding: 10px 20px 0 20px;
-    
+    grid-column-start: 1;
+    grid-column-end: 3;
     
 }
 
 .aside{
     background-color: orange;   
-    min-height: 500px;
+    /*min-height: 500px;*/
     padding: 10px 10px 0 10px;
     float: left;
-    width: calc(30% - 20px);
+    /*width: calc(30% - 20px);*/
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
+/*
 .aside input[type=text]{
     width: 100%;
-}
+}*/
 
 .article{
     /*border-color: white;
@@ -136,8 +149,10 @@ li a:hover {
     background-color: black;
     color: white;
     text-align: center;
-    height: 50px;
-    line-height: 50px;
+    /*height: 50px;*/
+    /*line-height: 50px;*/
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .clearfix{
@@ -156,7 +171,7 @@ li a:hover {
 
 @media (max-width: 768px){
     #container{
-        width: calc(100%-2px);
+        width: calc(100% - 2px);
     }
 }
 
