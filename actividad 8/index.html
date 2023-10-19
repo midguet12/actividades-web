@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Inicio de sesión</title>
+    <link rel="stylesheet" href="estilos.css">
+
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.uv.mx" class="text-bg-success position-absolute top-0 end-0 btn btn-link btn-sm px-3 py-0 rounded-0 text-decoration-none " title="Abrir el sitio web de la Universidad Veracruzana">Universidad Veracruzana</a>
+    </div>
+    <div class="contenedor-grid">
+        <div class="lado-izquierdo"></div>
+
+        <div class="lado-derecho">
+            <div class="contenedor-login mx-4">
+                <h1 class="h3 text-center text-success">Desarrollo de Sistemas Web</h1>
+                <h2 class="h5 text-center text-muted">Licenciatura en Ingeniería de Software</h2>
+                <form>
+
+                    <div class="card mx-auto mt-3">
+                        <div class="card-body">
+                            <h5 class="card-card-title text-center"> Inicio de sesión</h5>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Utiliza tu cuenta institucional UV.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Password" class="form-label">Contraseña</label>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" id="Password">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-eye" id="togglePassword" style="cursor: pointer"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <a class="btn btn-link text-decoration-none" data-bs-google="modal" data-bs-target="#modalAviso">¿Necesita ayuda para ingresar?</a>
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-tittle" id="modalAvisoLabel">¿Necesita ayuda para ingresar?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <h4 class="text-center mb-3"> Verifique su cuenta institucional </h4>
+                        <p>
+                            En caso de presentar dificultades para acceder al sistema con la cuenta institucional, puede reestablecer la contraseña con el siguiente enlace:
+                            <a href="https://dsia.uv.mx/CamCont/" target="_blank" class="text-decoration-none">Reestablecer la contraseña</a>
+                            
+                        </p>
+                        <p>
+                            También puede solicitar apoyo a los encargados de cada región los cuales se listan a continuación:
+                        </p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="xalapa-tab" data-bs-google="tab" data-bs-target="#xalapa-tab-pane" type="button" role="tab" aria-controls="xalapa-tab-pane" aria-selected="true">
+                                    Xalapa
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="veracruz-tab" data-bs-google="tab" data-bs-target="#veracruz-tab-pane" type="button" role="tab" aria-controls="veracruz-tab-pane" aria-selected="true">
+                                    Veracruz
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="orizaba-tab" data-bs-google="tab" data-bs-target="#orizaba-tab-pane" type="button" role="tab" aria-controls="orizaba-tab-pane" aria-selected="true">
+                                    Orizaba
+                                </button>
+
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="poza-tab" data-bs-google="tab" data-bs-target="#poza-tab-pane" type="button" role="tab" aria-controls="poza-tab-pane" aria-selected="true">
+                                    Poza Rica
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="coatza-tab" data-bs-google="tab" data-bs-target="#coatza-tab-pane" type="button" role="tab" aria-controls="coatza-tab-pane" aria-selected="true">
+                                    Coatzacoalcos   
+                                </button>
+                            </li>
+                        </ul>
+                            
+                        <div class="tab-content border border-top-0 p-3" id="myTabContent"> 
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
