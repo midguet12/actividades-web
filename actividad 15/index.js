@@ -14,7 +14,7 @@ async function enviarMail(json){
         secure: false, // true for 465, false for other ports
         auth: {
           user: "midguet12@hotmail.com", // generated ethereal user
-          pass: "Magt22081998", // generated ethereal password
+          pass: "*******", // generated ethereal password
         },
     });
 
