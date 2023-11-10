@@ -5,14 +5,10 @@ const botonImagen = document.querySelector('.boton-imagen');
 const botonContrato = document.querySelector('.boton-contrato');
 
 const ctx = canvas.getContext('2d');
-
 let modoEscritura = false;
-
-let xAnterior = 0, yAnterior = 0, yActual = 0;
-
-const COLOR = blue;
+let xAnterior = 0, yAnterior = 0, xActual = 0, yActual = 0;
+const COLOR = 'blue';
 const GROSOR = 2;
-
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -68,13 +64,58 @@ botonContrato.addEventListener('click', (e) =>{
     const ventana = window.open('contrato.html');
 });
 
-const obtenerPosicionCursor = (e) =>{
-    positionX = e.clientX - e.target.getBoundingClientRect().left();
-    positionY = e.clientY - e.target.getBoundingClientRect().top();
-
+const obtenerPosicionCursor = (e) => {
+    positionX = e.clientX - e.target.getBoundingClientRect().left;
+    positionY = e.clientY - e.target.getBoundingClientRect().top;
+    console.log(positionX + " " + positionY);
     return [positionX, positionY];
 }
 
 const OnClicOToqueIniciado = (e) => {
     modoEscritura = true;
+    [xActual, yActual] = obtenerPosicionCursor(e);
+
+    ctx.beginPath();
+    ctx.fillStyle = COLOR;
+    ctx.fillRect(xActual, yActual, GROSOR, GROSOR);
+    ctx.closePath();
 }
+
+const OnMouseODedoMovido = (e) => {
+    if(!modoEscritura) return;
+
+    let target = e;
+    if (e.type.includes("touch")) {
+        target = e.touches[0];
+    }
+
+    xAnterior = xActual;
+    yAnterior = yActual;
+
+    [xActual, yActual] = obtenerPosicionCursor(target);
+
+    ctx.beginPath();
+    ctx.lineWidth = GROSOR;
+    ctx.strokeStyle = COLOR;
+    ctx.moveTo(xAnterior,yAnterior);
+    ctx.lineTo(xActual, yActual);
+    ctx.stroke();
+    ctx.closePath();
+}
+
+function OnClicODedoLEvantado(){
+    modoEscritura = false;
+}
+
+['mousedown', 'touchstart'].forEach(nombreEvento =>{
+    canvas.addEventListener(nombreEvento, OnClicOToqueIniciado, { passive: true});
+});
+
+['mousemove', 'touchmove'].forEach(nombreEvento =>{
+    canvas.addEventListener(nombreEvento, OnMouseODedoMovido, { passive: true});
+});
+
+['mouseup', 'touchend'].forEach(nombreEvento =>{
+    canvas.addEventListener(nombreEvento, OnClicODedoLEvantado, { passive: true});
+});
+
