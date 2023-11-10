@@ -1,6 +1,6 @@
-windows.addEventListener('load', function(){
+window.addEventListener('load', function(){
     foco();
-})
+});
 
 let switchPrendido = false;
 const btn = document.querySelector(".switch");
