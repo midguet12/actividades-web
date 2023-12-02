@@ -1,5 +1,5 @@
 const labels = ['1 año', '2 años'];
-const datos = [24000, 27000];
+const datos = [2400, 2700];
 const colores = [
     'rgba(255,99.132)',
     'rgba(255,159,64)',
@@ -28,7 +28,7 @@ const data = {
         backgroundColor: colores,
         borderColor: borders,
         borderWidth: 1
-    }]  
+    }]      
 };
 
 const config = {
@@ -46,7 +46,7 @@ const config = {
                 align: 'top',
                 offset: 0,  
                 formatter: function (value, context){
-                    return '$' + new Intl.NumberFormat('es-MX').format(context.datasets.data[context.dataIndex]);
+                    return '$' + new Intl.NumberFormat('es-MX').format(context.dataset.data[context.dataIndex]);
                 }
             }
         }
